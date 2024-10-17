@@ -1,0 +1,150 @@
+/* Mobile-only styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #001f3f, #002b55); /* Fallback background */
+    background: radial-gradient(circle, #001f3f, #002b55, #00d4ff); /* Premium gradient */
+    animation: gradientAnimation 15s ease infinite; /* Animated background */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
+}
+
+#panel {
+    width: 100%; /* Full width on mobile */
+    height: 100%; /* Full height on mobile */
+    border-radius: 0; /* Remove rounded corners */
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for premium feel */
+    position: relative;
+    overflow: hidden;
+}
+
+#ptop {
+    width: 100%;
+    height: 80px; /* Shorter header */
+    background-color: #001f3f; /* Deep navy for header */
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.box {
+    padding: 12px; /* Reduced padding */
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #FFD700; /* Warm gold text */
+    font-size: 16px; /* Smaller font size */
+}
+
+.elm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pbtm {
+    width: 100%;
+    height: calc(100% - 80px);
+    gap: 10px;
+    padding: 10px; /* Reduced padding */
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background-color: #001f3f; /* Dark background for bubbles */
+    justify-content: center;
+}
+
+.bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Smaller bubble size */
+    height: 40px;
+    background: #00d4ff; /* Cyan for bubbles */
+    color: white;
+    font-weight: bold;
+    font-size: 18px; /* Adjusted font size */
+    border-radius: 50%;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bubble:hover {
+    background-color: #FFD700; /* Luxurious gold hover effect */
+    cursor: pointer;
+    transform: scale(1.2); /* Increased hover effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#game-over {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay for game over screen */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px; /* Smaller font size for game over */
+    flex-direction: column;
+    z-index: 10;
+}
+
+#game-over h1 {
+    margin-bottom: 15px;
+    color: #FFD700; /* Gold text for premium finish */
+}
+
+#restart-btn {
+    padding: 8px 15px; /* Smaller button */
+    background-color: #001f3f;
+    color: #FFD700; /* Gold text for buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Adjusted font size */
+    transition: background-color 0.3s;
+}
+
+#restart-btn:hover {
+    background-color: #00d4ff; /* Cyan hover for contrast */
+    color: white;
+}
+
+/* Media Query for mobile devices */
+@media screen and (min-width: 769px) {
+    body {
+        display: none; /* Hide content on larger screens */
+    }
+}
